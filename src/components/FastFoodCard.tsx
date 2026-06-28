@@ -1,5 +1,5 @@
 import type { FastFoodSpot } from "../types";
-import { getTagClass } from "./AccommodationCard";
+import { getTagClass } from "./tagUtils";
 
 interface FastFoodCardProps {
   item: FastFoodSpot;

@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from typing import Optional
 from uuid import UUID
 from app.models.food_service import FoodServiceType, BudgetType
@@ -29,5 +29,4 @@ class FoodServiceUpdate(BaseModel):
 class FoodServiceResponse(FoodServiceBase):
     id: UUID
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)

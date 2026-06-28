@@ -55,7 +55,7 @@ export function useListings() {
           const areas = Array.from(new Set(res.map((item) => item.area))).sort();
           setAllAreas(areas);
         }
-      } catch (err) {
+      } catch {
         if (active) {
           // Sensible fallbacks of seeded Jodhpur areas if API is offline
           setAllAreas([
@@ -153,6 +153,7 @@ export function useListings() {
       active = false;
       clearTimeout(delayDebounceFn);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     mode,
     stayFilters,
